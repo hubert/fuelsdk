@@ -9,7 +9,7 @@ describe FuelSDK::Rest do
 
   describe '#complete_url' do
     it 'raises an exception when identities are missing' do
-      expect { client.complete_url "some_url/%{parent}/%{child}", {parent: 1} }.to raise_exception 'key{child} not found to complete some_url/%{parent}/%{child}'
+      expect { client.complete_url "some_url/%{parent}/%{child}", {parent: 1} }.to raise_exception RuntimeError, /key(\s|\{)?child\}? not found to complete some_url\/\%\{parent\}\/\%\{child\}/
     end
 
     it 'returns url with all identities replaced' do

@@ -6,7 +6,7 @@ describe FuelSDK::Targeting do
 
   it { should respond_to(:endpoint) }
   it { should respond_to(:endpoint=) }
-  it { should respond_to(:determine_stack) }
+  it { expect(subject.respond_to?(:determine_stack, true)).to eql(true) }
   it { should respond_to(:get) }
   it { should respond_to(:post) }
   it { should respond_to(:patch) }
